@@ -1,0 +1,687 @@
+{
+  "tables": [
+    {
+      "schema": "bronze",
+      "table": "customer",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 224449,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer-8551c4d00d4e460d9413493fcd02420b/data/20261013_143022_00284_m9e56-1db2e9af-5aa2-43d3-b98f-50069bec7c9e.parquet",
+      "ddl": "CREATE TABLE lakehouse.bronze.customer (\n   custkey bigint,\n   mktsegment varchar\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/customer-8551c4d00d4e460d9413493fcd02420b'\n)"
+    },
+    {
+      "schema": "bronze",
+      "table": "orders",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6982599,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders-1e655980023d4a1b90e54a98b2e762a8/data/20261013_143023_00285_m9e56-c5bd585a-6e26-4375-b305-abd5dfa5c2f5.parquet",
+      "ddl": "CREATE TABLE lakehouse.bronze.orders (\n   orderkey bigint,\n   custkey bigint,\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/orders-1e655980023d4a1b90e54a98b2e762a8'\n)"
+    },
+    {
+      "schema": "bronze",
+      "table": "lineitem",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 40821047,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem-0162e049a6954bac8988bd9eb9d2bd4c/data/20261013_143023_00286_m9e56-99bb3c65-55b7-45cf-a0d2-a21d872b047b.parquet",
+      "ddl": "CREATE TABLE lakehouse.bronze.lineitem (\n   orderkey bigint,\n   linenumber integer,\n   extendedprice double,\n   discount double,\n   shipdate date\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/lineitem-0162e049a6954bac8988bd9eb9d2bd4c'\n)"
+    },
+    {
+      "schema": "silver",
+      "table": "order_lines",
+      "files": 1,
+      "rows": 30519,
+      "bytes": 478555,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/order_lines-761a91bffbf34445a14e1184fd9165db/data/20261013_143025_00287_m9e56-411f74ec-d1fd-4bbb-9bf9-0ef5adc99a0f.parquet",
+      "ddl": "CREATE TABLE lakehouse.silver.order_lines (\n   orderkey bigint,\n   linenumber integer,\n   custkey bigint,\n   orderdate date,\n   shippriority integer,\n   shipdate date,\n   mktsegment varchar,\n   extendedprice decimal(18, 2),\n   discount decimal(3, 2),\n   net_revenue decimal(22, 4),\n   shipment_lag_days bigint\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_lines-761a91bffbf34445a14e1184fd9165db'\n)"
+    },
+    {
+      "schema": "silver",
+      "table": "order_lines_full_review1",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 86253293,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/order_lines_full_review1-68f62f6e1f034e41804d898eb8fc2311/data/20261013_151612_00920_m9e56-e5ebfd4f-585a-4e92-9515-f365e8f94bee.parquet",
+      "ddl": "CREATE TABLE lakehouse.silver.order_lines_full_review1 (\n   orderkey bigint,\n   linenumber integer,\n   custkey bigint,\n   orderdate date,\n   shippriority integer,\n   shipdate date,\n   mktsegment varchar,\n   extendedprice decimal(18, 2),\n   discount decimal(3, 2),\n   net_revenue decimal(22, 4),\n   shipment_lag_days bigint\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_lines_full_review1-68f62f6e1f034e41804d898eb8fc2311'\n)"
+    },
+    {
+      "schema": "silver",
+      "table": "order_lines_monthly_review1",
+      "files": 80,
+      "rows": 6001215,
+      "bytes": 86978833,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-12/20261013_151617_00921_m9e56-63a9f882-9681-4173-be63-da58f62c827f.parquet",
+      "ddl": "CREATE TABLE lakehouse.silver.order_lines_monthly_review1 (\n   orderkey bigint,\n   linenumber integer,\n   custkey bigint,\n   orderdate date,\n   shippriority integer,\n   shipdate date,\n   mktsegment varchar,\n   extendedprice decimal(18, 2),\n   discount decimal(3, 2),\n   net_revenue decimal(22, 4),\n   shipment_lag_days bigint\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6',\n   partitioning = ARRAY['month(orderdate)']\n)"
+    },
+    {
+      "schema": "silver",
+      "table": "order_lines_evo_review1",
+      "files": 1,
+      "rows": 30519,
+      "bytes": 478845,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/order_lines_evo_review1-7ec8c5bf5e50499aaed38e78662a7ed5/data/20261013_151636_00966_m9e56-90257527-897f-45c7-9dce-27ee47c4f566.parquet",
+      "ddl": "CREATE TABLE lakehouse.silver.order_lines_evo_review1 (\n   orderkey bigint,\n   linenumber integer,\n   custkey bigint,\n   orderdate date,\n   shippriority integer,\n   shipdate date,\n   mktsegment varchar,\n   extendedprice decimal(18, 2),\n   discount decimal(3, 2),\n   net_revenue decimal(22, 4),\n   shipment_lag_days bigint,\n   source_name varchar\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_lines_evo_review1-7ec8c5bf5e50499aaed38e78662a7ed5'\n)"
+    },
+    {
+      "schema": "gold",
+      "table": "order_revenue",
+      "files": 1,
+      "rows": 11620,
+      "bytes": 90734,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/order_revenue-1a0c047d83a04462a367771cd73d9d5e/data/20261013_143026_00288_m9e56-3fff02d4-b8ad-44a0-9205-ce88696bba8b.parquet",
+      "ddl": "CREATE TABLE lakehouse.gold.order_revenue (\n   orderkey bigint,\n   revenue decimal(38, 4),\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_revenue-1a0c047d83a04462a367771cd73d9d5e'\n)"
+    },
+    {
+      "schema": "gold",
+      "table": "shipping_priority_top10",
+      "files": 1,
+      "rows": 10,
+      "bytes": 841,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/shipping_priority_top10-47633298a8af415da60b5b62ff0e7c2b/data/20261013_143026_00289_m9e56-de6742a4-4db2-478a-b0fe-5f2d5bfee896.parquet",
+      "ddl": "CREATE TABLE lakehouse.gold.shipping_priority_top10 (\n   orderkey bigint,\n   revenue decimal(38, 4),\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/shipping_priority_top10-47633298a8af415da60b5b62ff0e7c2b'\n)"
+    },
+    {
+      "schema": "scale_review1_sf3",
+      "table": "customer",
+      "files": 1,
+      "rows": 450000,
+      "bytes": 631787,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer-25994d77374c4c68a5c29cb9bc2a8a81/data/20261013_151636_00977_m9e56-e7b2aabf-7d5b-4c08-b53e-62040b07b028.parquet"
+    },
+    {
+      "schema": "scale_review1_sf3",
+      "table": "orders",
+      "files": 1,
+      "rows": 4500000,
+      "bytes": 24769302,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders-79d42a9656da4275ae6c522b1bb213d6/data/20261013_151636_00978_m9e56-d0e910bf-cde7-4c56-9835-efd0cd776c72.parquet"
+    },
+    {
+      "schema": "scale_review1_sf3",
+      "table": "lineitem",
+      "files": 1,
+      "rows": 17996609,
+      "bytes": 121270730,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem-97a5e605d0e446f687af8fd14dd9d8ad/data/20261013_151638_00979_m9e56-9eb2a73f-fcdb-406e-b08f-bd4ba1d0ab6c.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_none",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 1257144,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-30f81a58088a4069b0d9491e5e7444ec/data/20261013_151606_00904_m9e56-c84a9c0f-8b33-4a66-bb9f-0826356b83a2.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_none",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 18248452,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-5b2d6f3b2f0349e6b998b104cbf30bb1/data/20261013_151607_00906_m9e56-fc8662a4-8ecd-454b-9ab2-5da587735a80.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_none",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 108525025,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-527e1fe0f6d24ca3a6eb18cf92b347bd/data/20261013_151607_00908_m9e56-bfc2079d-0ac8-4a23-9961-7175a30898d0.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_snappy",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 657474,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-2dd147ba75d04bc0a09e07fe5c16db3e/data/20261013_151553_00876_m9e56-4f268f44-6f0e-4dfe-abf5-c25befa018be.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_snappy",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 11894612,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-94456196f9ef4e68a634d6922dc761fe/data/20261013_151554_00878_m9e56-913e8003-4728-424f-a980-3879480ea1bc.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_snappy",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 57957065,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-ca8be5fe084a4bbf9072a155f0d0736b/data/20261013_151554_00880_m9e56-0c59b785-b3f0-4dd3-a62e-1b307230a6b8.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_gzip",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 278617,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-3ebc64ab58034e969bc17271829d9ef6/data/20261013_151556_00883_m9e56-04383e78-9481-4bfd-ace5-061fe182dd43.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_gzip",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 7641248,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-b95583d8471e4a6eaad13c2081ef19e1/data/20261013_151556_00885_m9e56-25e38375-9ca5-409b-81e7-bfdc6e74aa9a.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_gzip",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 40393355,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-4680bb645b5d4567a5a2edc90c38a854/data/20261013_151557_00887_m9e56-1e50db24-2a80-44de-b3bb-b744728e46dd.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_zstd",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 223873,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-de65917f0d824f19899c686ae0005bae/data/20261013_151551_00869_m9e56-76c73a86-b488-46d9-ba3b-8c7aec33b55b.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_zstd",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 7049104,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-c06bc4e9a4414f519108eb7cb44ab2cd/data/20261013_151551_00871_m9e56-5424a05a-f7b6-4c3b-81ee-3ec74fd7dfa5.parquet"
+    },
+    {
+      "schema": "write_review1_parquet_zstd",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 40846767,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-38761f83e7a74b51af39b2d120f740fd/data/20261013_151552_00873_m9e56-8c35345a-8952-49a2-9f15-8ab82f6d7543.parquet"
+    },
+    {
+      "schema": "write_review1_orc_none",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 110937,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-b8669b8c8bb347399753af08e17b07f3/data/20261013_151549_00862_m9e56-d3019f42-ef18-4429-ac07-eefeef369c0e.orc"
+    },
+    {
+      "schema": "write_review1_orc_none",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 9362648,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-f5c43a9a4d024ea49c202f86e5be5788/data/20261013_151549_00864_m9e56-ca11a7f5-48b0-4695-9c08-719441569751.orc"
+    },
+    {
+      "schema": "write_review1_orc_none",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 117945289,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-44e34d5cbbe34e97b743d2d6e47ceb5e/data/20261013_151549_00866_m9e56-935c3442-c6e0-45f8-9b99-2cfe7f8dec2c.orc"
+    },
+    {
+      "schema": "write_review1_orc_snappy",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 100581,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-396964a58f6044e7bb31e00b8e5498ca/data/20261013_151601_00890_m9e56-4c005b65-6276-461f-a7ce-041445ea7a65.orc"
+    },
+    {
+      "schema": "write_review1_orc_snappy",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 7726163,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-4401e36a75764ee4b2fcdc2a3563e2cf/data/20261013_151602_00892_m9e56-86d708cc-db8c-481f-a8c0-4a1fa1ecce22.orc"
+    },
+    {
+      "schema": "write_review1_orc_snappy",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 66383571,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-50644e3927e9452a9f666f03ae4db553/data/20261013_151602_00894_m9e56-b90831cc-b6d2-4a1e-a647-48f0a21f2da0.orc"
+    },
+    {
+      "schema": "write_review1_orc_gzip",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 64253,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-2e34d4570aaf4e28b9ccb061e9be6410/data/20261013_151609_00911_m9e56-14554d7e-f0c3-48a2-a42c-3d03f91afcfb.orc"
+    },
+    {
+      "schema": "write_review1_orc_gzip",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6389621,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-7c22721601cb45a39986fdc9edd8095a/data/20261013_151609_00913_m9e56-cb35579e-cd58-42b9-81b7-c711ddd8270f.orc"
+    },
+    {
+      "schema": "write_review1_orc_gzip",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 44337597,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-ebb5666184914a208056ed67bb96425f/data/20261013_151609_00915_m9e56-c036bd35-38c9-4dae-94a8-3bec37747020.orc"
+    },
+    {
+      "schema": "write_review1_orc_zstd",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 66124,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-18fa16fefbe2458e8dbd87846787fdba/data/20261013_151604_00897_m9e56-387c2319-71aa-419b-aea1-8164e8cc1e32.orc"
+    },
+    {
+      "schema": "write_review1_orc_zstd",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6360590,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-e5c588c2940f4bda8ddd00a0e8640d6a/data/20261013_151604_00899_m9e56-29a55eb8-2983-484e-81dd-b32665b5a619.orc"
+    },
+    {
+      "schema": "write_review1_orc_zstd",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 47900374,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-046d890fe6364a5087ec0818cb151557/data/20261013_151604_00901_m9e56-375ee387-5d16-4081-b7b0-f077caa1cc3f.orc"
+    },
+    {
+      "schema": "bench_repeat1_parquet_none",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 1257143,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-2e69722bbf1e4763a2d290db42ad8c4b/data/20261013_151105_00574_m9e56-cca2d3f8-6bbd-4a2e-bb3f-54ce54e92da2.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_none",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 18248499,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-49dc80981e684a1fafadbe6924e2a059/data/20261013_151105_00576_m9e56-97abd663-cfd0-47b7-8517-29e3c37cac31.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_none",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 108506712,
+      "actual_sample_codec": [
+        "UNCOMPRESSED"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-9db20c19fc8d454796a18acf0ef44cd4/data/20261013_151106_00578_m9e56-709c5312-1aff-4bd4-a1f3-a42801af0ec0.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_snappy",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 658255,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-961173cb047542aaaf621e136b0b745d/data/20261013_151126_00623_m9e56-bc889ede-1224-4c9a-971e-3300180348d6.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_snappy",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 11894384,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-7b64b43dd71140479262c8eedf508901/data/20261013_151126_00625_m9e56-1c3ba568-1fc5-4ea6-8dc1-23b99e217d09.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_snappy",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 57965385,
+      "actual_sample_codec": [
+        "SNAPPY"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-d6f05f44f73f482f918dd6d846d5de12/data/20261013_151127_00627_m9e56-ae50e6b2-5695-4689-837c-5a4dfc6fd698.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_gzip",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 278575,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-e06ae7f8a1bd4b468a67cd0680bfecce/data/20261013_151107_00581_m9e56-bc40a771-2378-40de-8f3f-671a37cb95b0.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_gzip",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 7639388,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-4bd39e018aa642c0b98d681b89c3560f/data/20261013_151108_00583_m9e56-d4b5caf5-cf89-407b-bb3c-654b18a26a23.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_gzip",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 40399705,
+      "actual_sample_codec": [
+        "GZIP"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-0a18a046fcf949cbbf554ef773951fdc/data/20261013_151109_00585_m9e56-1fd115ba-774d-4fdf-a945-56c17d3a8e04.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_zstd",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 240071,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-0f2f9f3e084c44d9a090e7936902c9f4/data/20261013_151113_00588_m9e56-27c04db8-7e70-4e60-bfd3-e50d7102e778.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_zstd",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6985195,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-a0b2a614354440df9383011beca41598/data/20261013_151113_00590_m9e56-99e8f8c5-97c5-47a2-84b4-89c3cb52c3fe.parquet"
+    },
+    {
+      "schema": "bench_repeat1_parquet_zstd",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 40832080,
+      "actual_sample_codec": [
+        "ZSTD"
+      ],
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-d3fd464a4cf846668b9f5a9ee350ba04/data/20261013_151114_00592_m9e56-db8868d9-9e20-424a-902e-89be51488beb.parquet"
+    },
+    {
+      "schema": "bench_repeat1_orc_none",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 97666,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-64faceaf03434ddc935388d6a7ee4032/data/20261013_151121_00609_m9e56-f1948631-a5fe-44c8-a568-2c14d3586320.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_none",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 9276423,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-f562d944a920429aa157036335366eb1/data/20261013_151121_00611_m9e56-24cc05a1-c517-4f91-b2a6-975bc6050394.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_none",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 117943899,
+      "actual_sample_codec": "NONE",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-a51a0d5bd2a34632a83931959dbaa08a/data/20261013_151122_00613_m9e56-359c6095-e4a4-4617-968d-07a49239b07f.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_snappy",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 94078,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-c91811e6f132477e89e6be91f7c5fd57/data/20261013_151115_00595_m9e56-625cd0ab-246c-42b8-a398-47aa680bd6a9.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_snappy",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 7647995,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-aeec945be9724a35915f240f865b2587/data/20261013_151116_00597_m9e56-8ee64cf5-e64c-4972-94c2-949c2b757e28.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_snappy",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 66372480,
+      "actual_sample_codec": "SNAPPY",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-a6ac91592ae944628de76b39c9707942/data/20261013_151116_00599_m9e56-c138d3bb-b379-429c-8c0d-026feb392dd4.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_gzip",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 60667,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-9ae9bd54bea64703955d79401d6af7fe/data/20261013_151118_00602_m9e56-8fe71c8e-43fe-4e6a-947d-1fe6484058ba.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_gzip",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6336262,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-c067b21075aa4eedb2b299a25cfe5f67/data/20261013_151118_00604_m9e56-a47d5a4a-7333-4642-b3fa-02f4e73ae794.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_gzip",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 44343973,
+      "actual_sample_codec": "ZLIB",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-31023928ea374b4d8e541ed71516e6f7/data/20261013_151119_00606_m9e56-40719288-dbca-4883-a282-7d322d531e14.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_zstd",
+      "table": "customer_r3",
+      "files": 1,
+      "rows": 150000,
+      "bytes": 60836,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/customer_r3-f7d0164f4a454de2af819b4a7561d9a1/data/20261013_151124_00616_m9e56-ed6313a0-ebcd-4c49-a463-66f1efc13e83.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_zstd",
+      "table": "orders_r3",
+      "files": 1,
+      "rows": 1500000,
+      "bytes": 6313666,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/orders_r3-b7e11d11241b44b9b1379139a9bf8e22/data/20261013_151124_00618_m9e56-98188cf4-b657-4a3d-a790-78276ad9cda1.orc"
+    },
+    {
+      "schema": "bench_repeat1_orc_zstd",
+      "table": "lineitem_r3",
+      "files": 1,
+      "rows": 6001215,
+      "bytes": 47894091,
+      "actual_sample_codec": "ZSTD",
+      "all_s3_sizes_match": true,
+      "sample_file": "s3://lakehouse/warehouse/lineitem_r3-d1122daa9cfa4814895a7f312e01aef7/data/20261013_151124_00620_m9e56-f22cedfa-5f58-4fa5-887c-05e9056e7b9d.orc"
+    }
+  ],
+  "verified_tables": 60,
+  "verified_files": 139
+}

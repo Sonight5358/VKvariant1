@@ -1,0 +1,56 @@
+[
+  {
+    "schema": "bronze",
+    "table": "customer",
+    "files": 1,
+    "rows": 150000,
+    "bytes": 224449,
+    "count_star": 150000,
+    "ddl": "CREATE TABLE lakehouse.bronze.customer (\n   custkey bigint,\n   mktsegment varchar\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/customer-8551c4d00d4e460d9413493fcd02420b'\n)"
+  },
+  {
+    "schema": "bronze",
+    "table": "orders",
+    "files": 1,
+    "rows": 1500000,
+    "bytes": 6982599,
+    "count_star": 1500000,
+    "ddl": "CREATE TABLE lakehouse.bronze.orders (\n   orderkey bigint,\n   custkey bigint,\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/orders-1e655980023d4a1b90e54a98b2e762a8'\n)"
+  },
+  {
+    "schema": "bronze",
+    "table": "lineitem",
+    "files": 1,
+    "rows": 6001215,
+    "bytes": 40821047,
+    "count_star": 6001215,
+    "ddl": "CREATE TABLE lakehouse.bronze.lineitem (\n   orderkey bigint,\n   linenumber integer,\n   extendedprice double,\n   discount double,\n   shipdate date\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/lineitem-0162e049a6954bac8988bd9eb9d2bd4c'\n)"
+  },
+  {
+    "schema": "silver",
+    "table": "order_lines",
+    "files": 1,
+    "rows": 30519,
+    "bytes": 478555,
+    "count_star": 30519,
+    "ddl": "CREATE TABLE lakehouse.silver.order_lines (\n   orderkey bigint,\n   linenumber integer,\n   custkey bigint,\n   orderdate date,\n   shippriority integer,\n   shipdate date,\n   mktsegment varchar,\n   extendedprice decimal(18, 2),\n   discount decimal(3, 2),\n   net_revenue decimal(22, 4),\n   shipment_lag_days bigint\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_lines-761a91bffbf34445a14e1184fd9165db'\n)"
+  },
+  {
+    "schema": "gold",
+    "table": "order_revenue",
+    "files": 1,
+    "rows": 11620,
+    "bytes": 90734,
+    "count_star": 11620,
+    "ddl": "CREATE TABLE lakehouse.gold.order_revenue (\n   orderkey bigint,\n   revenue decimal(38, 4),\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/order_revenue-1a0c047d83a04462a367771cd73d9d5e'\n)"
+  },
+  {
+    "schema": "gold",
+    "table": "shipping_priority_top10",
+    "files": 1,
+    "rows": 10,
+    "bytes": 841,
+    "count_star": 10,
+    "ddl": "CREATE TABLE lakehouse.gold.shipping_priority_top10 (\n   orderkey bigint,\n   revenue decimal(38, 4),\n   orderdate date,\n   shippriority integer\n)\nWITH (\n   compression_codec = 'ZSTD',\n   format = 'PARQUET',\n   format_version = 2,\n   location = 's3://lakehouse/warehouse/shipping_priority_top10-47633298a8af415da60b5b62ff0e7c2b'\n)"
+  }
+]

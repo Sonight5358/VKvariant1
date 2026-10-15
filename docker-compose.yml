@@ -1,0 +1,104 @@
+name: voyaga-lakehouse-q3
+
+x-lakekeeper-env: &lakekeeper-env
+  LAKEKEEPER__PG_ENCRYPTION_KEY: local-lab-encryption-key-change-me
+  LAKEKEEPER__PG_DATABASE_URL_READ: postgresql://lakekeeper:lakekeeper_lab@postgres:5432/lakekeeper
+  LAKEKEEPER__PG_DATABASE_URL_WRITE: postgresql://lakekeeper:lakekeeper_lab@postgres:5432/lakekeeper
+  RUST_LOG: info
+
+services:
+  postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_DB: lakekeeper
+      POSTGRES_USER: lakekeeper
+      POSTGRES_PASSWORD: lakekeeper_lab
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U lakekeeper -d lakekeeper']
+      interval: 3s
+      timeout: 5s
+      retries: 30
+    mem_limit: 1g
+
+  minio:
+    # Maintained MinIO-compatible fork used by Lakekeeper's official example.
+    image: pgsty/silo:RELEASE.2026-09-03T13-18-01Z
+    command: server /data --console-address ':9001'
+    environment:
+      MINIO_ROOT_USER: lakehouse
+      MINIO_ROOT_PASSWORD: lakehouse_local_lab
+    ports:
+      - '127.0.0.1:9000:9000'
+      - '127.0.0.1:9001:9001'
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: [CMD, mc, ready, local]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+    mem_limit: 2g
+
+  migrate:
+    image: quay.io/lakekeeper/catalog:v0.14.0
+    environment: *lakekeeper-env
+    command: [migrate]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  lakekeeper:
+    image: quay.io/lakekeeper/catalog:v0.14.0
+    environment: *lakekeeper-env
+    command: [serve]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      minio:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:8181:8181'
+    healthcheck:
+      test: [CMD, /home/nonroot/lakekeeper, healthcheck]
+      interval: 3s
+      timeout: 10s
+      retries: 40
+      start_period: 10s
+    mem_limit: 1g
+
+  trino:
+    image: trinodb/trino:483
+    ports:
+      - '127.0.0.1:8080:8080'
+    volumes:
+      - ./config/trino:/etc/trino:ro
+    depends_on:
+      lakekeeper:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, curl, -f, http://localhost:8080/v1/info]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 30s
+    cpus: 8
+    mem_limit: 8g
+
+  tools:
+    build: ./tools
+    image: voyaga-lakehouse-tools:1.0
+    command: [python, -u, -c, 'import time; time.sleep(10000000)']
+    working_dir: /project
+    volumes:
+      - .:/project
+    depends_on:
+      trino:
+        condition: service_healthy
+    cpus: 2
+    mem_limit: 3g
+
+volumes:
+  minio-data:
+  postgres-data:

@@ -1,0 +1,112 @@
+{
+  "new_column_null_rows": 30519,
+  "before": [
+    [
+      30519,
+      "1115271243.5141"
+    ]
+  ],
+  "after": [
+    [
+      30519,
+      "1115271243.5141"
+    ]
+  ],
+  "data_unchanged": true,
+  "silver_columns": [
+    [
+      "orderkey",
+      "bigint",
+      "",
+      ""
+    ],
+    [
+      "linenumber",
+      "integer",
+      "",
+      ""
+    ],
+    [
+      "custkey",
+      "bigint",
+      "",
+      ""
+    ],
+    [
+      "orderdate",
+      "date",
+      "",
+      ""
+    ],
+    [
+      "shippriority",
+      "integer",
+      "",
+      ""
+    ],
+    [
+      "shipdate",
+      "date",
+      "",
+      ""
+    ],
+    [
+      "mktsegment",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "extendedprice",
+      "decimal(18,2)",
+      "",
+      ""
+    ],
+    [
+      "discount",
+      "decimal(3,2)",
+      "",
+      ""
+    ],
+    [
+      "net_revenue",
+      "decimal(22,4)",
+      "",
+      ""
+    ],
+    [
+      "shipment_lag_days",
+      "bigint",
+      "",
+      ""
+    ],
+    [
+      "source_name",
+      "varchar",
+      "",
+      ""
+    ]
+  ],
+  "snapshot": {
+    "id": 6418069680668648572,
+    "before_rows": 100,
+    "after_delete_rows": 98,
+    "historical_rows": 100,
+    "restored_rows": 100,
+    "all_values_restored": true,
+    "history": [
+      [
+        "2026-10-13 14:30:46.804 UTC",
+        6418069680668648572,
+        null,
+        "append"
+      ],
+      [
+        "2026-10-13 14:30:47.093 UTC",
+        4837159712605176071,
+        6418069680668648572,
+        "delete"
+      ]
+    ]
+  }
+}

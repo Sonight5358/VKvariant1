@@ -1,0 +1,807 @@
+{
+  "total_files": 80,
+  "eligible_files": 5,
+  "eligible_rows": 379415,
+  "files": [
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-01/20261013_151617_00921_m9e56-99149672-d66e-4caa-b1d0-f2acf97c15a0.parquet",
+      "rows": 77440,
+      "bytes": 1123042,
+      "orderdate_min": "1992-01-01",
+      "orderdate_max": "1992-01-31",
+      "shipdate_min": "1992-01-02",
+      "shipdate_max": "1992-05-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-02/20261013_151617_00921_m9e56-b913b184-0046-4dad-bc53-801323e2af5c.parquet",
+      "rows": 71974,
+      "bytes": 1037506,
+      "orderdate_min": "1992-02-01",
+      "orderdate_max": "1992-02-29",
+      "shipdate_min": "1992-02-02",
+      "shipdate_max": "1992-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-03/20261013_151617_00921_m9e56-da30c7b3-b71d-4333-b1c2-b0edf750655f.parquet",
+      "rows": 77322,
+      "bytes": 1121645,
+      "orderdate_min": "1992-03-01",
+      "orderdate_max": "1992-03-31",
+      "shipdate_min": "1992-03-02",
+      "shipdate_max": "1992-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-04/20261013_151617_00921_m9e56-b855ba28-4230-4469-b684-dcaf6553d6f3.parquet",
+      "rows": 74258,
+      "bytes": 1076498,
+      "orderdate_min": "1992-04-01",
+      "orderdate_max": "1992-04-30",
+      "shipdate_min": "1992-04-02",
+      "shipdate_max": "1992-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-05/20261013_151617_00921_m9e56-28092372-f374-4ba8-a5c2-3359afd3c4ad.parquet",
+      "rows": 76361,
+      "bytes": 1108924,
+      "orderdate_min": "1992-05-01",
+      "orderdate_max": "1992-05-31",
+      "shipdate_min": "1992-05-02",
+      "shipdate_max": "1992-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-06/20261013_151617_00921_m9e56-aa3d0828-35a8-4fa3-87fc-ad5611acb00a.parquet",
+      "rows": 74587,
+      "bytes": 1080165,
+      "orderdate_min": "1992-06-01",
+      "orderdate_max": "1992-06-30",
+      "shipdate_min": "1992-06-02",
+      "shipdate_max": "1992-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-07/20261013_151617_00921_m9e56-48053c38-dc51-45c3-806c-5965e1faf911.parquet",
+      "rows": 77167,
+      "bytes": 1120239,
+      "orderdate_min": "1992-07-01",
+      "orderdate_max": "1992-07-31",
+      "shipdate_min": "1992-07-02",
+      "shipdate_max": "1992-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-08/20261013_151617_00921_m9e56-8933c4d2-ffc5-421c-9bc0-1ea5a72272ff.parquet",
+      "rows": 76217,
+      "bytes": 1103975,
+      "orderdate_min": "1992-08-01",
+      "orderdate_max": "1992-08-31",
+      "shipdate_min": "1992-08-02",
+      "shipdate_max": "1992-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-09/20261013_151617_00921_m9e56-da093752-dc84-4ac8-9659-e58e9466ac4b.parquet",
+      "rows": 74315,
+      "bytes": 1074865,
+      "orderdate_min": "1992-09-01",
+      "orderdate_max": "1992-09-30",
+      "shipdate_min": "1992-09-02",
+      "shipdate_max": "1993-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-10/20261013_151617_00921_m9e56-41d8476b-e3e3-4356-b08e-934460f97bc8.parquet",
+      "rows": 76928,
+      "bytes": 1117499,
+      "orderdate_min": "1992-10-01",
+      "orderdate_max": "1992-10-31",
+      "shipdate_min": "1992-10-02",
+      "shipdate_max": "1993-03-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-11/20261013_151617_00921_m9e56-7f23aa5b-d353-49b9-af16-9fac611d95f7.parquet",
+      "rows": 73794,
+      "bytes": 1068220,
+      "orderdate_min": "1992-11-01",
+      "orderdate_max": "1992-11-30",
+      "shipdate_min": "1992-11-02",
+      "shipdate_max": "1993-03-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1992-12/20261013_151617_00921_m9e56-63a9f882-9681-4173-be63-da58f62c827f.parquet",
+      "rows": 77631,
+      "bytes": 1126993,
+      "orderdate_min": "1992-12-01",
+      "orderdate_max": "1992-12-31",
+      "shipdate_min": "1992-12-02",
+      "shipdate_max": "1993-05-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-01/20261013_151617_00921_m9e56-03f34280-e76d-42d9-b38b-ca8a9819fb90.parquet",
+      "rows": 77007,
+      "bytes": 1122391,
+      "orderdate_min": "1993-01-01",
+      "orderdate_max": "1993-01-31",
+      "shipdate_min": "1993-01-02",
+      "shipdate_max": "1993-06-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-02/20261013_151617_00921_m9e56-a194432a-370b-4a34-8f9a-1104c7568715.parquet",
+      "rows": 69730,
+      "bytes": 1004939,
+      "orderdate_min": "1993-02-01",
+      "orderdate_max": "1993-02-28",
+      "shipdate_min": "1993-02-02",
+      "shipdate_max": "1993-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-03/20261013_151617_00921_m9e56-58dbf526-000c-41ba-87ee-342eef64d307.parquet",
+      "rows": 77089,
+      "bytes": 1118796,
+      "orderdate_min": "1993-03-01",
+      "orderdate_max": "1993-03-31",
+      "shipdate_min": "1993-03-02",
+      "shipdate_max": "1993-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-04/20261013_151617_00921_m9e56-bbada929-2f58-4d27-a055-e0293f61ddf5.parquet",
+      "rows": 74824,
+      "bytes": 1083803,
+      "orderdate_min": "1993-04-01",
+      "orderdate_max": "1993-04-30",
+      "shipdate_min": "1993-04-02",
+      "shipdate_max": "1993-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-05/20261013_151617_00921_m9e56-5cb1ad20-d2f3-47d8-9b01-33e3a515e227.parquet",
+      "rows": 76108,
+      "bytes": 1102841,
+      "orderdate_min": "1993-05-01",
+      "orderdate_max": "1993-05-31",
+      "shipdate_min": "1993-05-02",
+      "shipdate_max": "1993-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-06/20261013_151617_00921_m9e56-1316b68d-0a3f-47ac-8ff4-eb2c68ac955b.parquet",
+      "rows": 75017,
+      "bytes": 1087054,
+      "orderdate_min": "1993-06-01",
+      "orderdate_max": "1993-06-30",
+      "shipdate_min": "1993-06-02",
+      "shipdate_max": "1993-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-07/20261013_151617_00921_m9e56-f3047521-3a34-449a-880a-be0eff3cf209.parquet",
+      "rows": 77724,
+      "bytes": 1127003,
+      "orderdate_min": "1993-07-01",
+      "orderdate_max": "1993-07-31",
+      "shipdate_min": "1993-07-02",
+      "shipdate_max": "1993-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-08/20261013_151617_00921_m9e56-fc1e15fc-f21c-49e6-9df6-d0413ba5d618.parquet",
+      "rows": 76628,
+      "bytes": 1113158,
+      "orderdate_min": "1993-08-01",
+      "orderdate_max": "1993-08-31",
+      "shipdate_min": "1993-08-02",
+      "shipdate_max": "1993-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-09/20261013_151617_00921_m9e56-e95c4aa9-c858-48e0-bf66-fc9ba1435600.parquet",
+      "rows": 75339,
+      "bytes": 1089972,
+      "orderdate_min": "1993-09-01",
+      "orderdate_max": "1993-09-30",
+      "shipdate_min": "1993-09-02",
+      "shipdate_max": "1994-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-10/20261013_151617_00921_m9e56-d62d8c96-e345-4b4d-8d4e-f2920f3ac100.parquet",
+      "rows": 76988,
+      "bytes": 1116329,
+      "orderdate_min": "1993-10-01",
+      "orderdate_max": "1993-10-31",
+      "shipdate_min": "1993-10-02",
+      "shipdate_max": "1994-03-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-11/20261013_151617_00921_m9e56-51e88306-3cf5-41fc-8890-c8fd948c0159.parquet",
+      "rows": 75023,
+      "bytes": 1086423,
+      "orderdate_min": "1993-11-01",
+      "orderdate_max": "1993-11-30",
+      "shipdate_min": "1993-11-02",
+      "shipdate_max": "1994-03-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1993-12/20261013_151617_00921_m9e56-1eeaba3b-2c5d-4722-9179-f1c393c9381f.parquet",
+      "rows": 76761,
+      "bytes": 1115039,
+      "orderdate_min": "1993-12-01",
+      "orderdate_max": "1993-12-31",
+      "shipdate_min": "1993-12-02",
+      "shipdate_max": "1994-05-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-01/20261013_151617_00921_m9e56-af5d993c-85af-4624-ba47-ebdd0bbf2b1a.parquet",
+      "rows": 78537,
+      "bytes": 1138370,
+      "orderdate_min": "1994-01-01",
+      "orderdate_max": "1994-01-31",
+      "shipdate_min": "1994-01-02",
+      "shipdate_max": "1994-06-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-02/20261013_151617_00921_m9e56-0cf54d9d-b881-4574-8781-554b37a0207c.parquet",
+      "rows": 69066,
+      "bytes": 994411,
+      "orderdate_min": "1994-02-01",
+      "orderdate_max": "1994-02-28",
+      "shipdate_min": "1994-02-02",
+      "shipdate_max": "1994-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-03/20261013_151617_00921_m9e56-b163757b-3928-42e5-ac6a-0af80280f9f3.parquet",
+      "rows": 78095,
+      "bytes": 1132554,
+      "orderdate_min": "1994-03-01",
+      "orderdate_max": "1994-03-31",
+      "shipdate_min": "1994-03-02",
+      "shipdate_max": "1994-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-04/20261013_151617_00921_m9e56-242ff989-e514-4b10-a4d8-4491634e6389.parquet",
+      "rows": 74494,
+      "bytes": 1078555,
+      "orderdate_min": "1994-04-01",
+      "orderdate_max": "1994-04-30",
+      "shipdate_min": "1994-04-02",
+      "shipdate_max": "1994-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-05/20261013_151617_00921_m9e56-56909f88-53ca-419e-aed9-7ad0fb937cfe.parquet",
+      "rows": 77182,
+      "bytes": 1120325,
+      "orderdate_min": "1994-05-01",
+      "orderdate_max": "1994-05-31",
+      "shipdate_min": "1994-05-02",
+      "shipdate_max": "1994-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-06/20261013_151617_00921_m9e56-0820e4f4-1f8d-4157-96fa-d28b7a906fcc.parquet",
+      "rows": 75261,
+      "bytes": 1089870,
+      "orderdate_min": "1994-06-01",
+      "orderdate_max": "1994-06-30",
+      "shipdate_min": "1994-06-02",
+      "shipdate_max": "1994-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-07/20261013_151617_00921_m9e56-99e3c6d2-e8b2-4de3-9d74-d99a3580741e.parquet",
+      "rows": 76596,
+      "bytes": 1112665,
+      "orderdate_min": "1994-07-01",
+      "orderdate_max": "1994-07-31",
+      "shipdate_min": "1994-07-02",
+      "shipdate_max": "1994-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-08/20261013_151617_00921_m9e56-2f4038e3-47c6-4e61-a345-25f2b44b66df.parquet",
+      "rows": 77690,
+      "bytes": 1126741,
+      "orderdate_min": "1994-08-01",
+      "orderdate_max": "1994-08-31",
+      "shipdate_min": "1994-08-02",
+      "shipdate_max": "1994-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-09/20261013_151617_00921_m9e56-9c5ab849-80c6-44ef-b290-3679de395541.parquet",
+      "rows": 74736,
+      "bytes": 1082933,
+      "orderdate_min": "1994-09-01",
+      "orderdate_max": "1994-09-30",
+      "shipdate_min": "1994-09-02",
+      "shipdate_max": "1995-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-10/20261013_151617_00921_m9e56-975afb61-763c-4f3f-99ae-76ed8109e4f8.parquet",
+      "rows": 75569,
+      "bytes": 1096100,
+      "orderdate_min": "1994-10-01",
+      "orderdate_max": "1994-10-31",
+      "shipdate_min": "1994-10-02",
+      "shipdate_max": "1995-03-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-11/20261013_151617_00921_m9e56-9c7f2f66-2613-479e-a52d-f1b5a42b6a07.parquet",
+      "rows": 75507,
+      "bytes": 1093278,
+      "orderdate_min": "1994-11-01",
+      "orderdate_max": "1994-11-30",
+      "shipdate_min": "1994-11-02",
+      "shipdate_max": "1995-03-31",
+      "eligible_by_dates": true
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1994-12/20261013_151617_00921_m9e56-4283b286-1540-4f8f-be07-b7ce6a749017.parquet",
+      "rows": 77786,
+      "bytes": 1128922,
+      "orderdate_min": "1994-12-01",
+      "orderdate_max": "1994-12-31",
+      "shipdate_min": "1994-12-02",
+      "shipdate_max": "1995-05-01",
+      "eligible_by_dates": true
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-01/20261013_151617_00921_m9e56-3f2ee7a6-9da7-44e0-b04f-95b32168b8e0.parquet",
+      "rows": 77914,
+      "bytes": 1130489,
+      "orderdate_min": "1995-01-01",
+      "orderdate_max": "1995-01-31",
+      "shipdate_min": "1995-01-02",
+      "shipdate_max": "1995-06-01",
+      "eligible_by_dates": true
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-02/20261013_151617_00921_m9e56-c915c0a4-10d8-4da5-9af9-9d90f29f228f.parquet",
+      "rows": 71096,
+      "bytes": 1024007,
+      "orderdate_min": "1995-02-01",
+      "orderdate_max": "1995-02-28",
+      "shipdate_min": "1995-02-02",
+      "shipdate_max": "1995-06-29",
+      "eligible_by_dates": true
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-03/20261013_151617_00921_m9e56-48b2c6d6-5555-447d-8878-21c9c3e14fb5.parquet",
+      "rows": 77112,
+      "bytes": 1118971,
+      "orderdate_min": "1995-03-01",
+      "orderdate_max": "1995-03-31",
+      "shipdate_min": "1995-03-02",
+      "shipdate_max": "1995-07-30",
+      "eligible_by_dates": true
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-04/20261013_151617_00921_m9e56-aa07e534-8a87-4ba4-9081-8aa04193b1c4.parquet",
+      "rows": 75695,
+      "bytes": 1097798,
+      "orderdate_min": "1995-04-01",
+      "orderdate_max": "1995-04-30",
+      "shipdate_min": "1995-04-02",
+      "shipdate_max": "1995-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-05/20261013_151617_00921_m9e56-c0fc35e6-7080-41c1-9e49-6abff49dd6ae.parquet",
+      "rows": 76770,
+      "bytes": 1114120,
+      "orderdate_min": "1995-05-01",
+      "orderdate_max": "1995-05-31",
+      "shipdate_min": "1995-05-02",
+      "shipdate_max": "1995-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-06/20261013_151617_00921_m9e56-c0303780-f223-474f-a2bc-734fe6e04cb8.parquet",
+      "rows": 75530,
+      "bytes": 1093836,
+      "orderdate_min": "1995-06-01",
+      "orderdate_max": "1995-06-30",
+      "shipdate_min": "1995-06-02",
+      "shipdate_max": "1995-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-07/20261013_151617_00921_m9e56-1f35bf0e-c8ca-4247-8504-1774a3b82178.parquet",
+      "rows": 77978,
+      "bytes": 1131990,
+      "orderdate_min": "1995-07-01",
+      "orderdate_max": "1995-07-31",
+      "shipdate_min": "1995-07-02",
+      "shipdate_max": "1995-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-08/20261013_151617_00921_m9e56-dc1402a0-b62a-4f75-bc65-fc58c3f762ea.parquet",
+      "rows": 77977,
+      "bytes": 1130413,
+      "orderdate_min": "1995-08-01",
+      "orderdate_max": "1995-08-31",
+      "shipdate_min": "1995-08-02",
+      "shipdate_max": "1995-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-09/20261013_151617_00921_m9e56-e17beb43-fafb-45f6-8289-cceb8b1181a7.parquet",
+      "rows": 74836,
+      "bytes": 1084438,
+      "orderdate_min": "1995-09-01",
+      "orderdate_max": "1995-09-30",
+      "shipdate_min": "1995-09-02",
+      "shipdate_max": "1996-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-10/20261013_151617_00921_m9e56-12be1313-ca0b-4ee6-a999-01c3460c9e84.parquet",
+      "rows": 77848,
+      "bytes": 1129908,
+      "orderdate_min": "1995-10-01",
+      "orderdate_max": "1995-10-31",
+      "shipdate_min": "1995-10-02",
+      "shipdate_max": "1996-02-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-11/20261013_151617_00921_m9e56-5f6e9a06-190f-4f2e-a3ea-4d5e992bea17.parquet",
+      "rows": 74701,
+      "bytes": 1081958,
+      "orderdate_min": "1995-11-01",
+      "orderdate_max": "1995-11-30",
+      "shipdate_min": "1995-11-02",
+      "shipdate_max": "1996-03-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1995-12/20261013_151617_00921_m9e56-b1539ba4-dfc6-432a-be2e-e5a3f5aa1b5b.parquet",
+      "rows": 76470,
+      "bytes": 1109730,
+      "orderdate_min": "1995-12-01",
+      "orderdate_max": "1995-12-31",
+      "shipdate_min": "1995-12-02",
+      "shipdate_max": "1996-04-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-01/20261013_151617_00921_m9e56-7d846db6-849f-4c56-b11e-8d986cbd2abf.parquet",
+      "rows": 76859,
+      "bytes": 1115237,
+      "orderdate_min": "1996-01-01",
+      "orderdate_max": "1996-01-31",
+      "shipdate_min": "1996-01-02",
+      "shipdate_max": "1996-05-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-02/20261013_151617_00921_m9e56-29040059-f536-45ec-a224-4cfbdf8d624e.parquet",
+      "rows": 73197,
+      "bytes": 1059104,
+      "orderdate_min": "1996-02-01",
+      "orderdate_max": "1996-02-29",
+      "shipdate_min": "1996-02-02",
+      "shipdate_max": "1996-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-03/20261013_151617_00921_m9e56-0be27b51-b9f3-4c36-b927-9a4883822e5f.parquet",
+      "rows": 76283,
+      "bytes": 1106002,
+      "orderdate_min": "1996-03-01",
+      "orderdate_max": "1996-03-31",
+      "shipdate_min": "1996-03-02",
+      "shipdate_max": "1996-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-04/20261013_151617_00921_m9e56-ddbb9285-31f2-4ab1-a77a-46d2d3d2ecc7.parquet",
+      "rows": 74941,
+      "bytes": 1085242,
+      "orderdate_min": "1996-04-01",
+      "orderdate_max": "1996-04-30",
+      "shipdate_min": "1996-04-02",
+      "shipdate_max": "1996-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-05/20261013_151617_00921_m9e56-a5f67423-df56-4d52-b85a-80b2a9cdc4cd.parquet",
+      "rows": 76445,
+      "bytes": 1108443,
+      "orderdate_min": "1996-05-01",
+      "orderdate_max": "1996-05-31",
+      "shipdate_min": "1996-05-02",
+      "shipdate_max": "1996-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-06/20261013_151617_00921_m9e56-91613f52-25ef-4f1a-a301-83484ffa6ca5.parquet",
+      "rows": 75728,
+      "bytes": 1097087,
+      "orderdate_min": "1996-06-01",
+      "orderdate_max": "1996-06-30",
+      "shipdate_min": "1996-06-02",
+      "shipdate_max": "1996-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-07/20261013_151617_00921_m9e56-9cdfdf88-f4f4-498e-8f39-76486f6ce21b.parquet",
+      "rows": 76868,
+      "bytes": 1114144,
+      "orderdate_min": "1996-07-01",
+      "orderdate_max": "1996-07-31",
+      "shipdate_min": "1996-07-02",
+      "shipdate_max": "1996-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-08/20261013_151617_00921_m9e56-feacd9f7-f98b-4d14-b696-053af62fcc98.parquet",
+      "rows": 79102,
+      "bytes": 1148103,
+      "orderdate_min": "1996-08-01",
+      "orderdate_max": "1996-08-31",
+      "shipdate_min": "1996-08-02",
+      "shipdate_max": "1996-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-09/20261013_151617_00921_m9e56-55d2fbe9-ec78-4721-a967-32c4dbbd6774.parquet",
+      "rows": 75401,
+      "bytes": 1092674,
+      "orderdate_min": "1996-09-01",
+      "orderdate_max": "1996-09-30",
+      "shipdate_min": "1996-09-02",
+      "shipdate_max": "1997-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-10/20261013_151617_00921_m9e56-343b3409-6788-47aa-bab0-50ba85ed667f.parquet",
+      "rows": 77467,
+      "bytes": 1123491,
+      "orderdate_min": "1996-10-01",
+      "orderdate_max": "1996-10-31",
+      "shipdate_min": "1996-10-02",
+      "shipdate_max": "1997-03-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-11/20261013_151617_00921_m9e56-5bf4091b-2451-49fc-aec2-122561b28426.parquet",
+      "rows": 75472,
+      "bytes": 1094460,
+      "orderdate_min": "1996-11-01",
+      "orderdate_max": "1996-11-30",
+      "shipdate_min": "1996-11-02",
+      "shipdate_max": "1997-03-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1996-12/20261013_151617_00921_m9e56-fd4538aa-00b6-4388-a94c-cf7ac5eb04e7.parquet",
+      "rows": 77728,
+      "bytes": 1126491,
+      "orderdate_min": "1996-12-01",
+      "orderdate_max": "1996-12-31",
+      "shipdate_min": "1996-12-02",
+      "shipdate_max": "1997-05-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-01/20261013_151617_00921_m9e56-6b504330-016b-474e-8855-20233b3b52ba.parquet",
+      "rows": 76351,
+      "bytes": 1106852,
+      "orderdate_min": "1997-01-01",
+      "orderdate_max": "1997-01-31",
+      "shipdate_min": "1997-01-02",
+      "shipdate_max": "1997-06-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-02/20261013_151617_00921_m9e56-74e8727b-73a4-4ca4-b546-010b42fd4caf.parquet",
+      "rows": 70499,
+      "bytes": 1014992,
+      "orderdate_min": "1997-02-01",
+      "orderdate_max": "1997-02-28",
+      "shipdate_min": "1997-02-02",
+      "shipdate_max": "1997-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-03/20261013_151617_00921_m9e56-2faf2de6-5e68-40c1-bc07-068eccf2fa11.parquet",
+      "rows": 76106,
+      "bytes": 1103157,
+      "orderdate_min": "1997-03-01",
+      "orderdate_max": "1997-03-31",
+      "shipdate_min": "1997-03-02",
+      "shipdate_max": "1997-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-04/20261013_151617_00921_m9e56-7a758b64-99e3-4d42-b62b-061c4a54fdc8.parquet",
+      "rows": 75915,
+      "bytes": 1099286,
+      "orderdate_min": "1997-04-01",
+      "orderdate_max": "1997-04-30",
+      "shipdate_min": "1997-04-02",
+      "shipdate_max": "1997-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-05/20261013_151617_00921_m9e56-6067a478-0d0b-4a7b-b165-21add713b98e.parquet",
+      "rows": 78040,
+      "bytes": 1133329,
+      "orderdate_min": "1997-05-01",
+      "orderdate_max": "1997-05-31",
+      "shipdate_min": "1997-05-02",
+      "shipdate_max": "1997-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-06/20261013_151617_00921_m9e56-9c18ea51-b920-4063-9f64-b874773bf46c.parquet",
+      "rows": 75284,
+      "bytes": 1091979,
+      "orderdate_min": "1997-06-01",
+      "orderdate_max": "1997-06-30",
+      "shipdate_min": "1997-06-02",
+      "shipdate_max": "1997-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-07/20261013_151617_00921_m9e56-21f14519-128a-4832-aead-ce6745a32914.parquet",
+      "rows": 77549,
+      "bytes": 1125508,
+      "orderdate_min": "1997-07-01",
+      "orderdate_max": "1997-07-31",
+      "shipdate_min": "1997-07-02",
+      "shipdate_max": "1997-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-08/20261013_151617_00921_m9e56-088144ed-0fd8-40d2-bee7-365b6ebf0621.parquet",
+      "rows": 77286,
+      "bytes": 1120396,
+      "orderdate_min": "1997-08-01",
+      "orderdate_max": "1997-08-31",
+      "shipdate_min": "1997-08-02",
+      "shipdate_max": "1997-12-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-09/20261013_151617_00921_m9e56-e931286a-903b-41f0-9b86-5c08bae2d18a.parquet",
+      "rows": 74530,
+      "bytes": 1079620,
+      "orderdate_min": "1997-09-01",
+      "orderdate_max": "1997-09-30",
+      "shipdate_min": "1997-09-02",
+      "shipdate_max": "1998-01-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-10/20261013_151617_00921_m9e56-10bc9c45-813d-4d66-8aac-735a424ad7da.parquet",
+      "rows": 77324,
+      "bytes": 1121398,
+      "orderdate_min": "1997-10-01",
+      "orderdate_max": "1997-10-31",
+      "shipdate_min": "1997-10-02",
+      "shipdate_max": "1998-03-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-11/20261013_151617_00921_m9e56-21707d0f-2c58-447b-bd1c-8933940dda1d.parquet",
+      "rows": 73744,
+      "bytes": 1069384,
+      "orderdate_min": "1997-11-01",
+      "orderdate_max": "1997-11-30",
+      "shipdate_min": "1997-11-02",
+      "shipdate_max": "1998-03-31",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1997-12/20261013_151617_00921_m9e56-828977c2-1ca6-4a18-8962-7ee6375c12c6.parquet",
+      "rows": 77391,
+      "bytes": 1123045,
+      "orderdate_min": "1997-12-01",
+      "orderdate_max": "1997-12-31",
+      "shipdate_min": "1997-12-02",
+      "shipdate_max": "1998-05-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-01/20261013_151617_00921_m9e56-7548cd5b-3c82-4500-81e5-0998010e9ad0.parquet",
+      "rows": 77437,
+      "bytes": 1123812,
+      "orderdate_min": "1998-01-01",
+      "orderdate_max": "1998-01-31",
+      "shipdate_min": "1998-01-02",
+      "shipdate_max": "1998-06-01",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-02/20261013_151617_00921_m9e56-fb3f3c5a-db46-492d-b61a-1fc39de87b55.parquet",
+      "rows": 70453,
+      "bytes": 1013663,
+      "orderdate_min": "1998-02-01",
+      "orderdate_max": "1998-02-28",
+      "shipdate_min": "1998-02-02",
+      "shipdate_max": "1998-06-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-03/20261013_151617_00921_m9e56-1f32fc54-d601-4cf7-8f0c-d08d2080edc1.parquet",
+      "rows": 77588,
+      "bytes": 1126105,
+      "orderdate_min": "1998-03-01",
+      "orderdate_max": "1998-03-31",
+      "shipdate_min": "1998-03-02",
+      "shipdate_max": "1998-07-30",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-04/20261013_151617_00921_m9e56-7b993527-41f3-4705-a989-52b40769493a.parquet",
+      "rows": 74713,
+      "bytes": 1082575,
+      "orderdate_min": "1998-04-01",
+      "orderdate_max": "1998-04-30",
+      "shipdate_min": "1998-04-02",
+      "shipdate_max": "1998-08-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-05/20261013_151617_00921_m9e56-80c36cb2-a2e9-428d-a695-385400661e0d.parquet",
+      "rows": 77725,
+      "bytes": 1127978,
+      "orderdate_min": "1998-05-01",
+      "orderdate_max": "1998-05-31",
+      "shipdate_min": "1998-05-02",
+      "shipdate_max": "1998-09-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-06/20261013_151617_00921_m9e56-b2d700ad-5ccc-4e9d-9b51-d0c7803f078d.parquet",
+      "rows": 74584,
+      "bytes": 1079876,
+      "orderdate_min": "1998-06-01",
+      "orderdate_max": "1998-06-30",
+      "shipdate_min": "1998-06-02",
+      "shipdate_max": "1998-10-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-07/20261013_151617_00921_m9e56-8f1eef8a-b1ef-466c-a467-024480764689.parquet",
+      "rows": 77744,
+      "bytes": 1127353,
+      "orderdate_min": "1998-07-01",
+      "orderdate_max": "1998-07-31",
+      "shipdate_min": "1998-07-02",
+      "shipdate_max": "1998-11-29",
+      "eligible_by_dates": false
+    },
+    {
+      "path": "s3://lakehouse/warehouse/order_lines_monthly_review1-90b5b8e52c364ff99864bde7528ad5f6/data/orderdate_month=1998-08/20261013_151617_00921_m9e56-78548ea9-2e03-4b15-b936-5f7b4ed62e6c.parquet",
+      "rows": 4783,
+      "bytes": 68346,
+      "orderdate_min": "1998-08-01",
+      "orderdate_max": "1998-08-02",
+      "shipdate_min": "1998-08-02",
+      "shipdate_max": "1998-12-01",
+      "eligible_by_dates": false
+    }
+  ]
+}

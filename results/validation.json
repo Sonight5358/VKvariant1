@@ -1,0 +1,19 @@
+{
+  "bronze_counts": [
+    150000,
+    1500000,
+    6001215
+  ],
+  "duplicate_customer_keys": 0,
+  "duplicate_orders_keys": 0,
+  "duplicate_lineitem_keys": 0,
+  "bad_customer": 0,
+  "bad_orders": 0,
+  "bad_lineitem": 0,
+  "customer_normalization_changes": 0,
+  "orders_without_customer": 0,
+  "lineitems_without_order": 0,
+  "silver_bad_rows": 0,
+  "bronze_equals_reference": true,
+  "gold_equals_reference": true
+}

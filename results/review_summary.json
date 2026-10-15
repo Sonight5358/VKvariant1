@@ -1,0 +1,22 @@
+{
+  "noise": [
+    {
+      "metric": "write",
+      "max_session_median_delta_s": 0.23899999999999988,
+      "max_within_group_range_s": 0.3639999999999999,
+      "empirical_threshold_s": 0.3639999999999999
+    },
+    {
+      "metric": "q3",
+      "max_session_median_delta_s": 0.03500000000000003,
+      "max_within_group_range_s": 0.068,
+      "empirical_threshold_s": 0.068
+    },
+    {
+      "metric": "aggregate",
+      "max_session_median_delta_s": 0.010999999999999982,
+      "max_within_group_range_s": 0.03,
+      "empirical_threshold_s": 0.03
+    }
+  ]
+}

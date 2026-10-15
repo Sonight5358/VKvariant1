@@ -1,0 +1,11 @@
+{
+  "captured_utc": "2026-10-13T14:40:33.5941279+00:00",
+  "client_timezone": "Europe/Moscow",
+  "docker_version": "29.8.2",
+  "docker_os": "Docker Desktop",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "logical_cpus": 24,
+  "docker_memory_bytes": 16447619072,
+  "architecture": "x86_64",
+  "storage_driver": "overlayfs"
+}

@@ -1,0 +1,7 @@
+NAME                               IMAGE                                     COMMAND                  SERVICE      CREATED          STATUS                      PORTS
+voyaga-lakehouse-q3-lakekeeper-1   quay.io/lakekeeper/catalog:v0.14.0        "/home/nonroot/lakek…"   lakekeeper   59 minutes ago   Up 59 minutes (healthy)     127.0.0.1:8181->8181/tcp
+voyaga-lakehouse-q3-migrate-1      quay.io/lakekeeper/catalog:v0.14.0        "/home/nonroot/lakek…"   migrate      59 minutes ago   Exited (0) 51 minutes ago   
+voyaga-lakehouse-q3-minio-1        pgsty/silo:RELEASE.2026-09-03T13-18-01Z   "/usr/bin/docker-ent…"   minio        59 minutes ago   Up 59 minutes (healthy)     127.0.0.1:9000-9001->9000-9001/tcp
+voyaga-lakehouse-q3-postgres-1     postgres:17.4                             "docker-entrypoint.s…"   postgres     59 minutes ago   Up 59 minutes (healthy)     5432/tcp
+voyaga-lakehouse-q3-tools-1        voyaga-lakehouse-tools:1.0                "python -u -c 'impor…"   tools        51 minutes ago   Up 51 minutes               
+voyaga-lakehouse-q3-trino-1        trinodb/trino:483                         "/usr/lib/trino/bin/…"   trino        59 minutes ago   Up 58 minutes (healthy)     127.0.0.1:8080->8080/tcp

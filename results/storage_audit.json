@@ -1,0 +1,612 @@
+{
+  "tables": [
+    {
+      "schema": "bench_main_parquet_none",
+      "table": "customer_r3",
+      "format": "PARQUET",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 1257143,
+      "s3_data_bytes": 1257143,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-989d0540f7474e14a31cbb55e786a389/data/20261013_142802_00129_m9e56-b170f5f3-fdad-4372-a547-cb2448482a6a.parquet",
+          "bytes": 1257143,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": [
+        "UNCOMPRESSED"
+      ],
+      "table_directory_all_bytes": 1302001
+    },
+    {
+      "schema": "bench_main_parquet_none",
+      "table": "orders_r3",
+      "format": "PARQUET",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 18248499,
+      "s3_data_bytes": 18248499,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-5ddb890a02594f158942fb890df78533/data/20261013_142802_00131_m9e56-da95e997-2e73-41c1-8241-2860e082c950.parquet",
+          "bytes": 18248499,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": [
+        "UNCOMPRESSED"
+      ],
+      "table_directory_all_bytes": 18344020
+    },
+    {
+      "schema": "bench_main_parquet_none",
+      "table": "lineitem_r3",
+      "format": "PARQUET",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 108506498,
+      "s3_data_bytes": 108506498,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-d29f16ff51014c258d1399645a8e69db/data/20261013_142802_00133_m9e56-c1f5c465-d8a4-4460-b123-0868914f4a6b.parquet",
+          "bytes": 108506498,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": [
+        "UNCOMPRESSED"
+      ],
+      "table_directory_all_bytes": 108602213
+    },
+    {
+      "schema": "bench_main_parquet_snappy",
+      "table": "customer_r3",
+      "format": "PARQUET",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 657468,
+      "s3_data_bytes": 657468,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-c989651e87e246f4a33b4d7d0aabe0e0/data/20261013_142824_00178_m9e56-8ac2badd-2ef3-45b8-a0b1-ca183dee1eb2.parquet",
+          "bytes": 657468,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": [
+        "SNAPPY"
+      ],
+      "table_directory_all_bytes": 702325
+    },
+    {
+      "schema": "bench_main_parquet_snappy",
+      "table": "orders_r3",
+      "format": "PARQUET",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 11894350,
+      "s3_data_bytes": 11894350,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-ee83c05dec294a22b709ff27573c4d39/data/20261013_142824_00180_m9e56-c0862b3a-3884-439e-84f4-c2ee41f09ef3.parquet",
+          "bytes": 11894350,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": [
+        "SNAPPY"
+      ],
+      "table_directory_all_bytes": 11989747
+    },
+    {
+      "schema": "bench_main_parquet_snappy",
+      "table": "lineitem_r3",
+      "format": "PARQUET",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 57966241,
+      "s3_data_bytes": 57966241,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-501ee45be2b446cca867362e6f717145/data/20261013_142824_00182_m9e56-d7717c22-3e99-4374-b731-fdee5f98a5fe.parquet",
+          "bytes": 57966241,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": [
+        "SNAPPY"
+      ],
+      "table_directory_all_bytes": 58061835
+    },
+    {
+      "schema": "bench_main_parquet_gzip",
+      "table": "customer_r3",
+      "format": "PARQUET",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 278563,
+      "s3_data_bytes": 278563,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-a2352b4d4bec4164a325fe770b8e6e83/data/20261013_142804_00136_m9e56-7edbeae4-5184-4121-9093-36ceb96235f3.parquet",
+          "bytes": 278563,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": [
+        "GZIP"
+      ],
+      "table_directory_all_bytes": 323420
+    },
+    {
+      "schema": "bench_main_parquet_gzip",
+      "table": "orders_r3",
+      "format": "PARQUET",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 7639717,
+      "s3_data_bytes": 7639717,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-95af070df65a4404aecf1544d9b51bfe/data/20261013_142804_00138_m9e56-a49d73f5-34e6-4068-877e-923f820f0579.parquet",
+          "bytes": 7639717,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": [
+        "GZIP"
+      ],
+      "table_directory_all_bytes": 7735256
+    },
+    {
+      "schema": "bench_main_parquet_gzip",
+      "table": "lineitem_r3",
+      "format": "PARQUET",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 40391801,
+      "s3_data_bytes": 40391801,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-dfe4ccda8592485492349f18204758bc/data/20261013_142805_00140_m9e56-dc751952-9f58-4268-8fef-63c10a59d723.parquet",
+          "bytes": 40391801,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": [
+        "GZIP"
+      ],
+      "table_directory_all_bytes": 40487561
+    },
+    {
+      "schema": "bench_main_parquet_zstd",
+      "table": "customer_r3",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 228980,
+      "s3_data_bytes": 228980,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-31204894d9e5461bbbfd975d2417dd42/data/20261013_142810_00143_m9e56-02655da2-8786-472f-b4c8-ec69e5ad2d8c.parquet",
+          "bytes": 228980,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 273837
+    },
+    {
+      "schema": "bench_main_parquet_zstd",
+      "table": "orders_r3",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 6982038,
+      "s3_data_bytes": 6982038,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-0a3c751487e14e1591b384f7198347d3/data/20261013_142810_00145_m9e56-0e277fb8-2b3c-43f6-af78-aebbc491996f.parquet",
+          "bytes": 6982038,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 7077242
+    },
+    {
+      "schema": "bench_main_parquet_zstd",
+      "table": "lineitem_r3",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 40838776,
+      "s3_data_bytes": 40838776,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-e1f3e1397ea44dbc80d6eb8a32387527/data/20261013_142811_00147_m9e56-01bab9ce-ed3c-45af-931c-af0ddfc3db5e.parquet",
+          "bytes": 40838776,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 40934416
+    },
+    {
+      "schema": "bench_main_orc_none",
+      "table": "customer_r3",
+      "format": "ORC",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 99198,
+      "s3_data_bytes": 99198,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-4c366bd816524571844462f88d961bba/data/20261013_142819_00164_m9e56-5d076417-8a7b-4606-949b-2bbabadb69e9.orc",
+          "bytes": 99198,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": "NONE",
+      "table_directory_all_bytes": 143858
+    },
+    {
+      "schema": "bench_main_orc_none",
+      "table": "orders_r3",
+      "format": "ORC",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 9278462,
+      "s3_data_bytes": 9278462,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-b8283bc0353e4cde9dba30f3d5b9fa01/data/20261013_142819_00166_m9e56-e6b396b8-82d2-45a7-be33-4c3c0676a84f.orc",
+          "bytes": 9278462,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": "NONE",
+      "table_directory_all_bytes": 9373629
+    },
+    {
+      "schema": "bench_main_orc_none",
+      "table": "lineitem_r3",
+      "format": "ORC",
+      "requested_codec": "NONE",
+      "file_count": 1,
+      "metadata_bytes": 117943952,
+      "s3_data_bytes": 117943952,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-9309b0f2803d4e86929c9079e051218f/data/20261013_142819_00168_m9e56-e258c695-653e-48c0-b0bb-c18dc5b475d2.orc",
+          "bytes": 117943952,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": "NONE",
+      "table_directory_all_bytes": 118039557
+    },
+    {
+      "schema": "bench_main_orc_snappy",
+      "table": "customer_r3",
+      "format": "ORC",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 92534,
+      "s3_data_bytes": 92534,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-8a844e1c034a4dc4a72166092aa6c79c/data/20261013_142813_00150_m9e56-20943d5f-d86f-4edd-883a-c2ece7ac4a35.orc",
+          "bytes": 92534,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": "SNAPPY",
+      "table_directory_all_bytes": 137355
+    },
+    {
+      "schema": "bench_main_orc_snappy",
+      "table": "orders_r3",
+      "format": "ORC",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 7649510,
+      "s3_data_bytes": 7649510,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-f499ef17e9d246c194199cd61a919f2e/data/20261013_142813_00152_m9e56-9b19fa61-3171-444a-ba69-f75c674db715.orc",
+          "bytes": 7649510,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": "SNAPPY",
+      "table_directory_all_bytes": 7744686
+    },
+    {
+      "schema": "bench_main_orc_snappy",
+      "table": "lineitem_r3",
+      "format": "ORC",
+      "requested_codec": "SNAPPY",
+      "file_count": 1,
+      "metadata_bytes": 66376126,
+      "s3_data_bytes": 66376126,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-1b291e95888d4ef78891b91c523309a5/data/20261013_142813_00154_m9e56-ea0176e8-bae9-4b53-bcd6-75d708654a1a.orc",
+          "bytes": 66376126,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": "SNAPPY",
+      "table_directory_all_bytes": 66471853
+    },
+    {
+      "schema": "bench_main_orc_gzip",
+      "table": "customer_r3",
+      "format": "ORC",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 58619,
+      "s3_data_bytes": 58619,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-b53403b7f2394966b5eeabae266e2ece/data/20261013_142815_00157_m9e56-f0eda115-6a65-4f35-91fe-4080882abad3.orc",
+          "bytes": 58619,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": "ZLIB",
+      "table_directory_all_bytes": 103145
+    },
+    {
+      "schema": "bench_main_orc_gzip",
+      "table": "orders_r3",
+      "format": "ORC",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 6333454,
+      "s3_data_bytes": 6333454,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-c631f41b5c0945a59955b721446005a8/data/20261013_142815_00159_m9e56-a7ccbbf6-99dd-4e8c-a3d2-c185113f21f9.orc",
+          "bytes": 6333454,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": "ZLIB",
+      "table_directory_all_bytes": 6428723
+    },
+    {
+      "schema": "bench_main_orc_gzip",
+      "table": "lineitem_r3",
+      "format": "ORC",
+      "requested_codec": "GZIP",
+      "file_count": 1,
+      "metadata_bytes": 44444234,
+      "s3_data_bytes": 44444234,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-4dbcd9c0cf1e4084a0651b387d66885a/data/20261013_142816_00161_m9e56-222b00d2-8831-43db-8d40-7c6f134df914.orc",
+          "bytes": 44444234,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": "ZLIB",
+      "table_directory_all_bytes": 44539837
+    },
+    {
+      "schema": "bench_main_orc_zstd",
+      "table": "customer_r3",
+      "format": "ORC",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 61255,
+      "s3_data_bytes": 61255,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer_r3-6e968e5f621249d8a28638dfcdc29a1e/data/20261013_142821_00171_m9e56-9ff1b564-21d7-44b7-9c42-c341bce0dcef.orc",
+          "bytes": 61255,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": "ZSTD",
+      "table_directory_all_bytes": 106087
+    },
+    {
+      "schema": "bench_main_orc_zstd",
+      "table": "orders_r3",
+      "format": "ORC",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 6310279,
+      "s3_data_bytes": 6310279,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders_r3-81ca6166db3c4839badffb4fa33e1252/data/20261013_142821_00173_m9e56-07405a14-7c47-4e42-8a85-b91ac4002cd8.orc",
+          "bytes": 6310279,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": "ZSTD",
+      "table_directory_all_bytes": 6405545
+    },
+    {
+      "schema": "bench_main_orc_zstd",
+      "table": "lineitem_r3",
+      "format": "ORC",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 47895869,
+      "s3_data_bytes": 47895869,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem_r3-77ef6e544d0647139729bdf0241f3d64/data/20261013_142822_00175_m9e56-e5ff167e-0e96-4908-9cca-15c3d3943760.orc",
+          "bytes": 47895869,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": "ZSTD",
+      "table_directory_all_bytes": 47991511
+    },
+    {
+      "schema": "bronze",
+      "table": "customer",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 224449,
+      "s3_data_bytes": 224449,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/customer-8551c4d00d4e460d9413493fcd02420b/data/20261013_143022_00284_m9e56-1db2e9af-5aa2-43d3-b98f-50069bec7c9e.parquet",
+          "bytes": 224449,
+          "rows": 150000
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 269307
+    },
+    {
+      "schema": "bronze",
+      "table": "orders",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 6982599,
+      "s3_data_bytes": 6982599,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/orders-1e655980023d4a1b90e54a98b2e762a8/data/20261013_143023_00285_m9e56-c5bd585a-6e26-4375-b305-abd5dfa5c2f5.parquet",
+          "bytes": 6982599,
+          "rows": 1500000
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 7078093
+    },
+    {
+      "schema": "bronze",
+      "table": "lineitem",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 40821047,
+      "s3_data_bytes": 40821047,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/lineitem-0162e049a6954bac8988bd9eb9d2bd4c/data/20261013_143023_00286_m9e56-99bb3c65-55b7-45cf-a0d2-a21d872b047b.parquet",
+          "bytes": 40821047,
+          "rows": 6001215
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 40916752
+    },
+    {
+      "schema": "silver",
+      "table": "order_lines",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 478555,
+      "s3_data_bytes": 478555,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/order_lines-761a91bffbf34445a14e1184fd9165db/data/20261013_143025_00287_m9e56-411f74ec-d1fd-4bbb-9bf9-0ef5adc99a0f.parquet",
+          "bytes": 478555,
+          "rows": 30519
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 630713
+    },
+    {
+      "schema": "gold",
+      "table": "order_revenue",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 90734,
+      "s3_data_bytes": 90734,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/order_revenue-1a0c047d83a04462a367771cd73d9d5e/data/20261013_143026_00288_m9e56-3fff02d4-b8ad-44a0-9205-ce88696bba8b.parquet",
+          "bytes": 90734,
+          "rows": 11620
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 170695
+    },
+    {
+      "schema": "gold",
+      "table": "shipping_priority_top10",
+      "format": "PARQUET",
+      "requested_codec": "ZSTD",
+      "file_count": 1,
+      "metadata_bytes": 841,
+      "s3_data_bytes": 841,
+      "all_s3_file_sizes_match": true,
+      "files": [
+        {
+          "path": "s3://lakehouse/warehouse/shipping_priority_top10-47633298a8af415da60b5b62ff0e7c2b/data/20261013_143026_00289_m9e56-de6742a4-4db2-478a-b0fe-5f2d5bfee896.parquet",
+          "bytes": 841,
+          "rows": 10
+        }
+      ],
+      "sample_file_codec": [
+        "ZSTD"
+      ],
+      "table_directory_all_bytes": 14716
+    }
+  ],
+  "bucket_object_count": 442,
+  "bucket_total_bytes": 1864822434
+}

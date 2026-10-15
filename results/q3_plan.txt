@@ -1,0 +1,105 @@
+Trino version: 483
+Fragment 0 [SINGLE]
+    Output layout: [orderkey_4, sum, orderdate, shippriority]
+    Output partitioning: SINGLE []
+    Output[columnNames = [orderkey, revenue, orderdate, shippriority]]
+    │   Layout: [orderkey_4:bigint, sum:double, orderdate:date, shippriority:integer]
+    │   Estimates: {rows: 10 (280B), cpu: 0, memory: 0B, network: 0B}
+    │   orderkey := orderkey_4
+    │   revenue := sum
+    └─ TopN[count = 10, orderBy = [sum DESC NULLS LAST]]
+       │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+       │   Estimates: {rows: 10 (280B), cpu: ?, memory: ?, network: ?}
+       └─ LocalExchange[partitioning = SINGLE]
+          │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+          │   Estimates: {rows: 10 (280B), cpu: 0, memory: 0B, network: 0B}
+          └─ RemoteSource[sourceFragmentIds = [1]]
+                 Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+
+Fragment 1 [HASH]
+    Output layout: [orderkey_4, orderdate, shippriority, sum]
+    Output partitioning: SINGLE []
+    TopNPartial[count = 10, orderBy = [sum DESC NULLS LAST]]
+    │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+    │   Estimates: {rows: 10 (280B), cpu: ?, memory: ?, network: ?}
+    └─ LocalExchange[partitioning = SINGLE]
+       │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+       │   Estimates: {rows: 10 (280B), cpu: 0, memory: 0B, network: 0B}
+       └─ TopNPartial[count = 10, orderBy = [sum DESC NULLS LAST]]
+          │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+          │   Estimates: {rows: 10 (280B), cpu: ?, memory: ?, network: ?}
+          └─ LocalExchange[partitioning = ROUND_ROBIN]
+             │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+             │   Estimates: {rows: 10 (280B), cpu: 280, memory: 0B, network: 0B}
+             └─ TopNPartial[count = 10, orderBy = [sum DESC NULLS LAST]]
+                │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+                │   Estimates: {rows: 10 (280B), cpu: ?, memory: ?, network: ?}
+                └─ Aggregate[type = FINAL, keys = [orderkey_4, orderdate, shippriority]]
+                   │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum:double]
+                   │   Estimates: {rows: 472514 (12.62MB), cpu: 12.62M, memory: 12.62MB, network: 0B}
+                   │   sum := sum(sum_8)
+                   └─ LocalExchange[partitioning = HASH, arguments = [orderkey_4::bigint, orderdate::date, shippriority::integer]]
+                      │   Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum_8:double]
+                      │   Estimates: {rows: 472514 (12.62MB), cpu: 12.62M, memory: 0B, network: 0B}
+                      └─ RemoteSource[sourceFragmentIds = [2]]
+                             Layout: [orderkey_4:bigint, orderdate:date, shippriority:integer, sum_8:double]
+
+Fragment 2 [SOURCE]
+    Output layout: [orderkey_4, orderdate, shippriority, sum_8]
+    Output partitioning: HASH [orderkey_4, orderdate, shippriority]
+    InnerJoin[criteria = (orderkey_4 = orderkey), distribution = REPLICATED]
+    │   Layout: [orderkey_4:bigint, sum_8:double, orderdate:date, shippriority:integer]
+    │   Estimates: {rows: 472514 (12.62MB), cpu: 71.96M, memory: 3.97MB, network: 0B}
+    │   Distribution: REPLICATED
+    │   dynamicFilterAssignments = {orderkey -> #df_670}
+    ├─ Aggregate[type = PARTIAL, keys = [orderkey_4]]
+    │  │   Layout: [orderkey_4:bigint, sum_8:double]
+    │  │   Estimates: {rows: 3225207 (55.36MB), cpu: ?, memory: ?, network: ?}
+    │  │   sum_8 := sum(expr)
+    │  └─ Project[]
+    │     │   Layout: [expr:double, orderkey_4:bigint]
+    │     │   Estimates: {rows: 3225207 (55.36MB), cpu: 55.36M, memory: 0B, network: 0B}
+    │     │   expr := $operator$multiply(extendedprice, $operator$subtract(double '1.0', discount))
+    │     └─ ScanFilterProject[table = lakehouse:bronze.lineitem$data@6135160496423800303, filterPredicate = (date '1995-03-15' < shipdate), dynamicFilters = {orderkey_4 = #df_670}]
+    │            Layout: [orderkey_4:bigint, extendedprice:double, discount:double]
+    │            Estimates: {rows: 6001215 (154.53MB), cpu: 183.14M, memory: 0B, network: 0B}/{rows: 3225207 (83.05MB), cpu: 183.14M, memory: 0B, network: 0B}/{rows: 3225207 (83.05MB), cpu: 83.05M, memory: 0B, network: 0B}
+    │            extendedprice := 3:extendedprice:double
+    │            discount := 4:discount:double
+    │            shipdate := 5:shipdate:date
+    │            orderkey_4 := 1:orderkey:bigint
+    └─ LocalExchange[partitioning = HASH, arguments = [orderkey::bigint]]
+       │   Layout: [orderkey:bigint, orderdate:date, shippriority:integer]
+       │   Estimates: {rows: 219344 (3.97MB), cpu: 3.97M, memory: 0B, network: 0B}
+       └─ RemoteSource[sourceFragmentIds = [3]]
+              Layout: [orderkey:bigint, orderdate:date, shippriority:integer]
+
+Fragment 3 [SOURCE]
+    Output layout: [orderkey, orderdate, shippriority]
+    Output partitioning: BROADCAST []
+    InnerJoin[criteria = (custkey_0 = custkey), distribution = REPLICATED]
+    │   Layout: [orderkey:bigint, orderdate:date, shippriority:integer]
+    │   Estimates: {rows: 219344 (3.97MB), cpu: 23.70M, memory: 263.67kB, network: 0B}
+    │   Distribution: REPLICATED
+    │   dynamicFilterAssignments = {custkey -> #df_672}
+    ├─ ScanFilter[table = lakehouse:bronze.orders$data@8225340958125681982, filterPredicate = (orderdate < date '1995-03-15'), dynamicFilters = {custkey_0 = #df_672}]
+    │      Layout: [orderkey:bigint, custkey_0:bigint, orderdate:date, shippriority:integer]
+    │      Estimates: {rows: 1500000 (40.05MB), cpu: 40.05M, memory: 0B, network: 0B}/{rows: 729106 (19.47MB), cpu: 40.05M, memory: 0B, network: 0B}
+    │      custkey_0 := 2:custkey:bigint
+    │      shippriority := 4:shippriority:integer
+    │      orderdate := 3:orderdate:date
+    │      orderkey := 1:orderkey:bigint
+    └─ LocalExchange[partitioning = SINGLE]
+       │   Layout: [custkey:bigint]
+       │   Estimates: {rows: 30000 (263.67kB), cpu: 0, memory: 0B, network: 0B}
+       └─ RemoteSource[sourceFragmentIds = [4]]
+              Layout: [custkey:bigint]
+
+Fragment 4 [SOURCE]
+    Output layout: [custkey]
+    Output partitioning: BROADCAST []
+    ScanFilterProject[table = lakehouse:bronze.customer$data@7881402372442501551, filterPredicate = (mktsegment = varchar 'BUILDING')]
+        Layout: [custkey:bigint]
+        Estimates: {rows: 150000 (1.29MB), cpu: 2.13M, memory: 0B, network: 0B}/{rows: 30000 (263.67kB), cpu: 2.13M, memory: 0B, network: 0B}/{rows: 30000 (263.67kB), cpu: 263.67k, memory: 0B, network: 0B}
+        custkey := 1:custkey:bigint
+        mktsegment := 2:mktsegment:varchar
+
